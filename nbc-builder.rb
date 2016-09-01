@@ -38,7 +38,7 @@ class NBC
 			when 3
 				system("lynx ./services/mashable-news.html")
 			when 4
-				system("lynx ./services/nbc-home.html")		
+				system("lynx ./services/index.html")		
 			when 5
 				abort("\n\tThank you for stopping by\n\n")
 		end 
@@ -50,7 +50,7 @@ class NBC
 		File.new("./services/digg-news.html", "w+")
 		File.new("./services/reddit-news.html", "w+")
 		File.new("./services/mashable-news.html", "w+")
-		File.new("./services/nbc-home.html", "w+")
+		File.new("./services/index.html", "w+")
 	end
 	def feed_rss(news_service)
 		puts "feeding from digg"
@@ -100,7 +100,7 @@ class NBC
 	end	
 	def write_binder(binder)
 		puts "Writing files to binder..."
-    File.open("./services/nbc-home.html", 'w') do |file|
+    File.open("./services/index.html", 'w') do |file|
     	file.puts "<!DOCTYPE html>"
       file.puts "<html>"
       file.puts "<head>"
