@@ -9,7 +9,9 @@ Just run the script main and access the current news of these 3 services.
 ### How to run (only for linux)
 	* Ctrl+t
 	* sudo apt-get install lynx
-	* ruby path/to/folder/main.rb
+	* git clone https://github.com/vandergast/nbc.git
+	* cd nbc
+	* ruby main.rb
 
 
 ##### If you know how to use lynx in other OSs feel free to install and run the program
