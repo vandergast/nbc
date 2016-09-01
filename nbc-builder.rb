@@ -106,14 +106,13 @@ class NBC
       file.puts "<head>"
       file.puts "<title>NBC NEWS</title>"
       file.puts "<body>"
+      file.puts "\n\t<a href=./digg-news.html>DIGG NEWS</a> - <a href=./reddit-news.html>REDDIT NEWS</a> - <a href=./mashable-news.html>MASHABLE NEWS</a>"
       binder.each do |story|
         file.puts "\n\t<p><b>Title:</b> #{story[:title]}<br>"
         file.puts "\n\t<b>Author:</b> #{story[:author]}<br>"
         file.puts "\n\t<b>Date:</b> #{(((Time.parse((story[:datetime]).to_s)).to_s).split(" "))[0]}<br>"
         file.puts "\n\t<b>Time:</b> #{(((Time.parse((story[:datetime]).to_s)).to_s).split(" "))[1]}<br>"
         file.puts "\n\t<b>Website:</b> <a href=#{story[:url]}>link</a><br>"
-        file.puts "\n\t<b>Content:</b> #{story[:content]}<br>"
-        file.puts "\n\t<b>Article #{story[:art_num]}</b></p>\n\n<br>"
         file.puts "<hr>"  
       end
       file.puts "</body>"
