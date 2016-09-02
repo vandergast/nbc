@@ -106,23 +106,26 @@ class NBC
     	file.puts "<!DOCTYPE html>"
       file.puts "<html>"
       file.puts "<head>"
-      file.puts "\t<title>NBC NEWS</title>"
-      file.puts '\t<meta charset="utf-8">'
-      file.puts '\t<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">'
-			file.puts '\t<link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">'
-			file.puts '\t<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>'
-      file.puts "<body>"
-      file.puts '\t<a href="./digg-news.html">DIGG NEWS</a> - <a href=."/reddit-news.html">REDDIT NEWS</a> - <a href="./mashable-news.html">MASHABLE NEWS</a>'
+      file.puts "	<title>NBC NEWS</title>"
+      file.puts `	<meta charset="utf-8">`
+      file.puts `	<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+      file.puts `	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">`
+			file.puts `	<link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">`
+			file.puts `	<script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>`
+      file.puts "	<body>"
+      file.puts `		<div id="container">`
+      file.puts `		<a href="./digg-news.html">DIGG NEWS</a> - <a href=."/reddit-news.html">REDDIT NEWS</a> - <a href="./mashable-news.html">MASHABLE NEWS</a>`
       binder.each do |story|
-        file.puts "\t<p><b>Title:</b> #{story[:title]}<br>"
-        file.puts "\t<b>Author:</b> #{story[:author]}<br>"
-        file.puts "\t<b>Date:</b> #{(((Time.parse((story[:datetime]).to_s)).to_s).split(" "))[0]}<br>"
-        file.puts "\t<b>Time:</b> #{(((Time.parse((story[:datetime]).to_s)).to_s).split(" "))[1]}<br>"
-        file.puts "\t<b>Website:</b> <a href=#{story[:url]}>link</a><br>"
-        file.puts "<hr>"  
+        file.puts "		<p><b>Title:</b> #{story[:title]}<br>"
+        file.puts "		<b>Author:</b> #{story[:author]}<br>"
+        file.puts "		<b>Date:</b> #{(((Time.parse((story[:datetime]).to_s)).to_s).split(" "))[0]}<br>"
+        file.puts "		<b>Time:</b> #{(((Time.parse((story[:datetime]).to_s)).to_s).split(" "))[1]}<br>"
+        file.puts "		<b>Website:</b> <a href=#{story[:url]}>link</a><br>"
+        file.puts "		<hr>"  
       end
-      file.puts "</body>"
-      file.puts "</head>"
+      file.puts "		</div>"
+      file.puts "	</body>"
+      file.puts "	</head>"
       file.puts "</html>"
     end
    end
