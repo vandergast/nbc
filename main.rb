@@ -8,19 +8,11 @@ Description: News By Continent Program
 
 require_relative './nbc-builder'
 
-
 def main
 	app = NBC.new
 	menu = app.menu
-	puts "Everything ready to run (press any key to continue)"
-	gets
-	██╗  ██╗█████╗ ██╗     ██╗      ██████╗    ██╗    ██╗    ██████╗  ██████╗  ██╗        ██████╗ 
-	██║  ██║██╔═══╝ ██║     ██║     ██╔═══██╗   ██║     ██║  ██╔═══ ██╗ ██╔══██╗  ██║        ██╔══██╗
-	██████║█████╗ ██║     ██║     ██║   ██║    ██║ █╗ ██║  ██║    ██║ ██████╔╝ ██║         ██║  ██║
-	██╔══██║██╔══╝  ██║     ██║     ██║   ██║    ██║███╗██║ ██║    ██║ ██╔══██╗  ██║         ██║  ██║
-	██║  ██║█████╗ █████╗ █████╗╚█████╔╝    ╚███╔███╔╝  ╚██████╔╝ ██║  ██║  ███████╗ ██████╔╝
-	 ╚═╝  ╚═╝╚══════╝ ╚══════╝ ╚══════╝ ╚═════╝        ╚══╝ ╚══╝     ╚═════╝    ╚═╝  ╚═╝     ╚══════╝    ╚═════╝ 
-                                                                                        
+	puts "Everything ready to run (press any key to continue)".colorize(:light_blue).italic
+	gets                                                                              
 	while true
 		menu.call_menu()
 	end

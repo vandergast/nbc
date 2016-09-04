@@ -6,9 +6,11 @@ Description: A menu builder class for all sorts of interfaces
 {hack}
 =end
 
+require_relative './printers'
+
 class Menu
   def initialize(attr={})
-    puts "Building menu"
+    dp "Building menu"
     @options = attr[:options] # The options available for the user
     @actions = attr[:actions] # A proc that executes the selected option
     @app_name = attr[:app_name] # The name of the app
@@ -20,16 +22,15 @@ class Menu
     answer = 0
     loop do
       system ("clear")
-      print "\n\tWelcome to #{@app_name} - #{@description}\n"
-      print "\n\tMENU:".colorize(:light_blue)
+      puts "Welcome to #{@app_name}"
+      puts "#{@description}\n".italic
+      puts "MENU:".colorize(:light_blue).italic
       @options.each{|option| puts option}       
-      print "\n\t>> ".colorize(:light_blue)
-      system("stty raw -echo")
-      answer = STDIN.getc.to_i
-      system("stty -raw echo")
+      puts ">> ".colorize(:light_blue).italic
+      answer = input.to_i
       puts "#{answer}"
       break if answer > 0 && answer < top_range
-      print "\n\tThat's not an option in the MENU, please chose again.\n\t(press enter)".colorize(:red)
+      ep "That's not an option in the MENU, please chose again.\n\t(press enter)"
       gets
     end
     system ("clear")
