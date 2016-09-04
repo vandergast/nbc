@@ -16,12 +16,12 @@ class NBC
 		write_to_files(@nbc)
 		write_binder(@binder)
 		options = [
-			"\n\t1.- Digg (press 1)".colorize(:yellow).italic,
-			"\n\t2.- Reddit (press 2)".colorize(:yellow).italic,
-			"\n\t3.- Mashable (press 3)".colorize(:yellow).italic,
-			"\n\t4.- News by Date (press 4)".colorize(:yellow).italic,
-			"\n\t5.- NBC in Lynx (press 5)".colorize(:yellow).italic,
-			"\n\t6.- Exit (press 6)".colorize(:red).italic
+			"\n\t1.- Digg (press 1)".colorize(:light_yellow),
+			"\n\t2.- Reddit (press 2)".colorize(:light_yellow),
+			"\n\t3.- Mashable (press 3)".colorize(:light_yellow),
+			"\n\t4.- News by Date (press 4)".colorize(:light_yellow),
+			"\n\t5.- NBC in Lynx (press 5)".colorize(:light_yellow),
+			"\n\t6.- Exit (press 6)".colorize(:light_red)
 		]
 		description = "An RSS interface for DIGG, REDDIT & MASHABLE"
 		app_name = "nbc news".upcase.colorize(:green)

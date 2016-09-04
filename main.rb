@@ -11,7 +11,7 @@ require_relative './nbc-builder'
 def main
 	app = NBC.new
 	menu = app.menu
-	puts "Everything ready to run (press any key to continue)".colorize(:light_blue).italic
+	puts "Everything ready to run (press any key to continue)".colorize(:light_blue)
 	gets                                                                              
 	while true
 		menu.call_menu()

@@ -22,11 +22,11 @@ class Menu
     answer = 0
     loop do
       system ("clear")
-      puts "Welcome to #{@app_name}"
-      puts "#{@description}\n".italic
-      puts "MENU:".colorize(:light_blue).italic
+      puts "Welcome to " + "#{@app_name}"
+      puts "#{@description}\n".colorize(:light_blue)
+      puts "MENU:".colorize(:light_blue)
       @options.each{|option| puts option}       
-      puts ">> ".colorize(:light_blue).italic
+      puts ">> ".colorize(:light_blue)
       answer = input.to_i
       puts "#{answer}"
       break if answer > 0 && answer < top_range
