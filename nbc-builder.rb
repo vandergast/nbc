@@ -1,5 +1,5 @@
-require_relative ('./news-service')
-require_relative ('./menu')
+require_relative ('./classes/news-service')
+require_relative ('./classes/menu')
 
 class NBC
   attr_accessor :nbc, :menu
