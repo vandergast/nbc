@@ -10,6 +10,7 @@ require 'net/http'
 require 'json'
 require 'date'
 require 'time'
+require 'launchy'
 require_relative './stories'
 require_relative './printers'
 
@@ -133,7 +134,7 @@ class News_Service
       system("clear")
       puts "Opening a link to" + " => ".colorize(:yellow) + "#{link}".colorize(:light_blue)
       puts "(press enter to go back to the menu)".colorize(:red)
-      system("xdg-open 2> /dev/null #{link}")
+      system("launchy 2> /dev/null #{link}")
     else
       ep "Thats not a available article number"
     end

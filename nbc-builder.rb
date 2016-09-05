@@ -5,7 +5,7 @@ class NBC
   attr_accessor :nbc, :menu
 
 	def initialize
-		make_archive
+		#make_archive
 		@nbc = News_Service.new
 		feed_rss(@nbc)
 		@binder = {
@@ -13,15 +13,15 @@ class NBC
       stories: []
     }
 		create_binder(@nbc, @binder)
-		write_to_files(@nbc)
-		write_binder(@binder)
+		#write_to_files(@nbc)
+		#write_binder(@binder)
 		options = [
 			"\n\t1.- Digg (press 1)".colorize(:light_yellow),
 			"\n\t2.- Reddit (press 2)".colorize(:light_yellow),
 			"\n\t3.- Mashable (press 3)".colorize(:light_yellow),
 			"\n\t4.- News by Date (press 4)".colorize(:light_yellow),
-			"\n\t5.- NBC in Lynx (press 5)".colorize(:light_yellow),
-			"\n\t6.- Exit (press 6)".colorize(:light_red)
+#			"\n\t5.- NBC in Lynx (press 5)".colorize(:light_yellow),
+			"\n\t5.- Exit (press 5)".colorize(:light_red)
 		]
 		description = "An RSS interface for DIGG, REDDIT & MASHABLE"
 		app_name = "nbc news".upcase.colorize(:green)
@@ -43,9 +43,9 @@ class NBC
 				@nbc.read_news(@nbc.stories.mashable)
 			when 4
 				@nbc.read_news(@binder)
+			#when 5
+				#system("lynx ./services/index.html")		
 			when 5
-				system("lynx ./services/index.html")		
-			when 6
 				abort("\n\tThank you for stopping by\n\n")
 		end 
 	end

@@ -31,7 +31,6 @@ class Menu
       puts "#{answer}"
       break if answer > 0 && answer < top_range
       ep "That's not an option in the MENU, please chose again.\n\t(press enter)"
-      gets
     end
     system ("clear")
     @actions.call(answer)
